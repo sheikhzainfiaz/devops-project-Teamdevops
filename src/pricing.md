@@ -1,0 +1,3 @@
+# Pricing
+
+Our pricing information.
