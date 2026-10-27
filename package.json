@@ -1,11 +1,11 @@
 {
   "name": "@sheikhzainfiaz/devops-pipeline",
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sheikhzainfiaz/devops-project-Teamdevops.git"
+  "type": "git",
+  "url": "git+https://github.com/sheikhzainfiaz/devops-project-Teamdevops.git"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+  "registry": "https://npm.pkg.github.com"
   },
   "version": "1.1.0",
   "description": "Renders the course Markdown sources into HTML pages.",
@@ -24,7 +24,6 @@
   "keywords": [],
   "type": "commonjs",
   "dependencies": {
-    "js-yaml": "^4.1.0",
     "markdown-it": "^15.0.3"
   }
 }
