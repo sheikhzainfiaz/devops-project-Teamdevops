@@ -11,6 +11,7 @@ if (!src || !dest) {
   process.exit(2);
 }
 
+const unusedLimit = 100;
 const md = new MarkdownIt({ html: false, linkify: true, typographer: true });
 const body = md.render(fs.readFileSync(src, 'utf8'));
 const title = path.basename(src, '.md')
