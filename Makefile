@@ -3,7 +3,7 @@ OUT_DIR := out
 SOURCES := $(wildcard $(SRC_DIR)/*.md)
 OUTPUTS := $(patsubst $(SRC_DIR)/%.md,$(OUT_DIR)/%.html,$(SOURCES))
 
-.PHONY: all check build test clean ci help deps package
+.PHONY: all check build test coverage clean ci help deps package
 
 all: test ## build and test everything (default)
 
@@ -29,6 +29,9 @@ build: $(OUTPUTS) ## build every out-of-date output
 
 test: build ## run the test suite against what was built
 	@npm test --silent
+
+coverage: ## run tests and show code coverage
+	@node --test --experimental-test-coverage
 
 package: test ## produce the versioned artifact
 	npm pack
