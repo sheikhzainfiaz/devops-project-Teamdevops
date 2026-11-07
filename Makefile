@@ -27,7 +27,7 @@ check: ## fail early if there is nothing to build
 
 build: $(OUTPUTS) ## build every out-of-date output
 
-lint: ## check JavaScript code quality
+lint: deps ## check JavaScript code quality
 	@npm run lint --silent
 
 test: build ## run the test suite against what was built
