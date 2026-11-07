@@ -33,8 +33,11 @@ lint: ## check JavaScript code quality
 test: build ## run the test suite against what was built
 	@npm test --silent
 
-coverage: ## run tests and show code coverage
-	@node --test --experimental-test-coverage
+coverage: build ## the tests again, writing coverage/lcov.info for SonarQube
+	@mkdir -p coverage
+	node --test --experimental-test-coverage \
+		--test-reporter=spec --test-reporter-destination=stdout \
+		--test-reporter=lcov --test-reporter-destination=coverage/lcov.info
 
 package: test ## produce the versioned artifact
 	npm pack
